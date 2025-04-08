@@ -8,16 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.plugin.core.PluginRegistry;
 
 @SpringBootTest
-public class ExceptionTest {
+public class PluginTest {
 
     @Autowired
-    PluginRegistry<IaaSCreateValidatePlugin, IaaSPluginType> pluginRegistry;
-
+    PluginRegistry<IaaSCreateValidatePlugin,IaaSPluginType> pluginRegistry;
+    
     @Test
     public void testCode(){
         IaaSCreateValidatePlugin iaaSCreateValidatePlugin = pluginRegistry.getRequiredPluginFor(IaaSPluginType.IAAS_ECS_CREATE_VALIDATE);
         iaaSCreateValidatePlugin.validate();
-
     }
-
 }
