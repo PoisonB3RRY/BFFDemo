@@ -9,3 +9,12 @@ spring:
     username: appuser
     password: jianjian123
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: '/actuator'
+      cors:
+        allowed-origins: 'http://localhost:8081'
